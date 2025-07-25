@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>즐거운가 괴로운가 부산 3일기</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-app">
+    <h1 id="quest-title"></h1>
+    <p id="quest-description"></p>
+    <img id="current-image" src="{{ url_for('static', filename='img/stepgood.png') }}" alt="기분 이미지">
+
+    <button id="complete-btn" onclick="completeQuest()">퀘스트 완료</button>
+
+    <div class="nav-buttons">
+      <button onclick="prevQuest()">&lt; 이전</button>
+      <button onclick="nextQuest()">다음 &gt;</button>
+    </div>
+
+    <div id="choice-screen" style="display:none;">
+      <p>지금 기분은 어떤가요?</p>
+      <div class="emoji-buttons">
+        <button onclick="selectFeeling('stepgood')">😊</button>
+        <button onclick="selectFeeling('stepnotgood')">😵</button>
+        <button onclick="selectFeeling('stepworst')">💀</button>
+      </div>
+    </div>
+
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
